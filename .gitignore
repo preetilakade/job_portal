@@ -1,0 +1,34 @@
+/*************  ✨ Codeium Command ⭐  *************/
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build directories
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Next.js
+.next/
+out/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+/******  f5fbdc6d-82e5-4ab7-a082-4e29042fd46d  *******/
