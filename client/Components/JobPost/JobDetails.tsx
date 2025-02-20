@@ -2,7 +2,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { useGlobalContext } from "@/context/GlobalContext";
-import ReactQuill from "react-quill-new";
+
 import { Label } from "../ui/label";
 import "react-quill-new/dist/quill.snow.css";
 import { Separator } from "@radix-ui/react-dropdown-menu";
@@ -13,6 +13,11 @@ import { SelectTrigger } from "../ui/select";
 import { SelectValue } from "../ui/select";
 import { SelectContent } from "../ui/select";
 import { SelectItem } from "../ui/select";
+
+
+const ReactQuill = dynamic(() => import("react-quill-new"),{
+    ssr: false,
+});
 
 
 function MyEditor() {
