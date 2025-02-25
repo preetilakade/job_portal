@@ -14,7 +14,7 @@ function page() {
 
      useEffect(() => {
             if(!loading && !isAuthenticated){
-                router.push("http://localhost:8000/login");
+                router.push(`${`${process.env.SERVER_URL}/login` || "http://localhost:8000/login"}`);
             }
         }, [isAuthenticated, loading,router]);
 

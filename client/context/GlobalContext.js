@@ -1,27 +1,27 @@
 
-import React, {createContext,  useContext, useEffect, useState} from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
 
- const GlobalContext = createContext();
+const GlobalContext = createContext();
 
- axios.defaults.baseURL = "http://localhost:8000";
- axios.defaults.withCredentials = true;
+axios.defaults.baseURL = `${`${process.env.SERVER_URL}` || "http://localhost:8000"}`;
+axios.defaults.withCredentials = true;
 
 
- export const GlobalProvider = ({children}) => {
+export const GlobalProvider = ({ children }) => {
 
-   // const router = useRouter();
+    // const router = useRouter();
 
-    const[isAuthenticated, setIsAuthenticated] = useState(false);
-    const[auth0User, setAuth0User] = useState(null);
-    const[userProfile, setUserProfile] = useState({});
-    const[loading, setLoading] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [auth0User, setAuth0User] = useState(null);
+    const [userProfile, setUserProfile] = useState({});
+    const [loading, setLoading] = useState(false);
 
 
     //input state
-   
+
 
 
     const [jobTitle, setJobTitle] = useState("");
@@ -48,28 +48,28 @@ import { useRouter } from "next/navigation";
                 setIsAuthenticated(res.data.isAuthenticated);
                 setAuth0User(res.data.user);
                 setLoading(false);
-            }catch(error){
-                console.log("error checking auth",error);
-            }finally{
+            } catch (error) {
+                console.log("error checking auth", error);
+            } finally {
                 setLoading(false);
             }
         };
         checkAuth();
 
-       
+
     }, []);
 
 
     const getUserProfile = async (id) => {
-        try{
+        try {
 
             const res = await axios.get(`/api/v1/user/${id}`);
 
             //console.log("User profile",res.data);
             setUserProfile(res.data);
 
-        }catch(error){
-            console.log("error getting user profile",error);
+        } catch (error) {
+            console.log("error getting user profile", error);
 
         }
     };
@@ -100,31 +100,31 @@ import { useRouter } from "next/navigation";
 
 
 
-    
-    
-    
 
-    
+
+
+
+
 
     useEffect(() => {
 
-      if(isAuthenticated && auth0User){
-          
-      
-        getUserProfile(auth0User.sub);
-      }
-    },[isAuthenticated, auth0User]);
-    
+        if (isAuthenticated && auth0User) {
+
+
+            getUserProfile(auth0User.sub);
+        }
+    }, [isAuthenticated, auth0User]);
+
 
     return (
-        <GlobalContext.Provider value={ {
+        <GlobalContext.Provider value={{
             isAuthenticated,
             auth0User,
 
             userProfile,
             getUserProfile,
             loading,
-            
+
             jobTitle,
             jobDescription,
             salary,
@@ -148,26 +148,26 @@ import { useRouter } from "next/navigation";
             setLocation,
 
 
-           handleInputChange, 
-           handleTitleChange,
-
-           
-           
-            
-            
+            handleInputChange,
+            handleTitleChange,
 
 
 
-            
-            
+
+
+
+
+
+
+
         }}>
             {children}
         </GlobalContext.Provider>
     );
- };
+};
 
 
- export const useGlobalContext = () => {
+export const useGlobalContext = () => {
 
     return useContext(GlobalContext);
- };
+};

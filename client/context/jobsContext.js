@@ -9,7 +9,7 @@ import { get } from "http";
 
 const JobsContext = createContext();
 
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = `${`${process.env.SERVER_URL}` || "http://localhost:8000"}`;
 axios.defaults.withCredentials = true;
 
 
