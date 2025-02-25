@@ -2,8 +2,8 @@
 import React from "react";
 import Header from "@/Components/Header";
 import { useJobsContext } from "@/context/jobsContext";
-import { useGlobalContext } from "@/context/GlobalContext";
-import  {useState} from "react";
+//import { useGlobalContext } from "@/context/GlobalContext";
+//import  {useState} from "react";
 import SearchForm from "@/Components/SearchForm";
 import Image from "next/image";
 import { grip,table,list } from "@/utils/Icons"
