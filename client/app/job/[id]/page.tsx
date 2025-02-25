@@ -138,7 +138,7 @@ function page() {
                             onClick={() => {
                                 isAuthenticated
                                     ? handleLike(job._id)
-                                    : router.push(`${`${process.env.SERVER_URL}/login` || "http://localhost:8000/login"}`);
+                                    : router.push(`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/login` : "http://localhost:8000/login"}`);
                             }}
                         >
                             {isLiked ? bookmark : bookmarkEmpty}
@@ -217,7 +217,7 @@ function page() {
                                 toast.error("You have already applied for this job");
                             }
                         } else {
-                            router.push(`${`${process.env.SERVER_URL}/login` || "http://localhost:8000/login"}`);
+                            router.push(`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/login` : "http://localhost:8000/login"}`);
                         }
                     }}
                 >

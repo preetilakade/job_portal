@@ -12,11 +12,11 @@ function page() {
     const router = useRouter();
 
 
-     useEffect(() => {
-            if(!loading && !isAuthenticated){
-                router.push(`${`${process.env.SERVER_URL}/login` || "http://localhost:8000/login"}`);
-            }
-        }, [isAuthenticated, loading,router]);
+    useEffect(() => {
+        if (!loading && !isAuthenticated) {
+            router.push(`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/login` : "http://localhost:8000/login"}`);
+        }
+    }, [isAuthenticated, loading, router]);
 
 
     return (

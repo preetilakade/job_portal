@@ -113,7 +113,7 @@ function JobCard({ job, activeJob }: JobProps) {
                         ${isLiked ? "text-[#7263f3]" : "text-gray-400"}
                         `}
                     onClick={() => {
-                        isAuthenticated ? handleLike(job._id) : router.push(`${`${process.env.SERVER_URL}/login` || "http://localhost:8000/login"}`);
+                        isAuthenticated ? handleLike(job._id) : router.push(`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/login` : "http://localhost:8000/login"}`);
                     }}
                 >
                     {isLiked ? bookmark : bookmarkEmpty}
