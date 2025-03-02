@@ -42,7 +42,7 @@ function JobCard({ job, activeJob }: JobProps) {
 
     const router = useRouter();
 
-    const companyDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit";
+    const companyDescription = "";
 
     //console.log("Job ID in JobCard:", job?._id);
     //console.log("Job Type in JobCard:", job?.jobType);
