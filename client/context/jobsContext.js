@@ -9,7 +9,7 @@ import { get } from "http";
 
 const JobsContext = createContext();
 
-axios.defaults.baseURL = `${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}` : "http://localhost:8000"}`;
+axios.defaults.baseURL = `${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}` : "https://jobfindr-b3evdud4ergme6ak.canadacentral-01.azurewebsites.net"}`;
 axios.defaults.withCredentials = true;
 
 

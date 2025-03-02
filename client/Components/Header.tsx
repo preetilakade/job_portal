@@ -63,14 +63,14 @@ function Header() {
                 ) : (
                     <div className="flex items-center gap-6">
                         <Link
-                            href={`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/login` : "http://localhost:8000/login"}`}
+                            href={`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/login` : "https://calm-water-0eb02631e.6.azurestaticapps.net/login"}`}
                             className="py-2 px-6 rounded-md flex items-center gap-4 border bg-[#7263f3] border-[#7263f3] text-white   hover:bg-[#7263f3]/90 transition-all duration-200 ease-in-out"
                         >
                             <LogIn className="w-4 h-4" />
                             Login
                         </Link>
 
-                        <Link href={`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/login` : "http://localhost:8000/login"}`}
+                        <Link href={`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/login` : "https://calm-water-0eb02631e.6.azurestaticapps.net/login"}`}
                             className="py-2 px-6 rounded-md flex items-center gap-4 border border-[#7263f3] text-[#7263f3] hover:bg-[#7263f3]/10 transition-all duration-200 ease-in-out"
                         >
                             <UserPlus className="w-4 h-4" />
