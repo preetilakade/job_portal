@@ -86,6 +86,7 @@ routeFiles.forEach((file) => {
 });
 
 app.get("/",async (req, res) => {
+  const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:3000";//modified
   if (req.oidc.isAuthenticated()) {
 
     //check if auth0 user exist in db
@@ -97,6 +98,20 @@ app.get("/",async (req, res) => {
     return res.send("logged out");
   }
 });
+
+
+const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:3000"];
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+}));
+
 
   
 
