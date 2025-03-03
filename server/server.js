@@ -100,7 +100,7 @@ app.get("/",async (req, res) => {
 });
 
 
-const allowedOrigins = [process.env.CLIENT_URL || "https://calm-water-0eb02631e.6.azurestaticapps.net","http://localhost:8000"];
+const allowedOrigins = [process.env.CLIENT_URL || "https://calm-water-0eb02631e.6.azurestaticapps.net"];
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
