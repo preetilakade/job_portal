@@ -70,7 +70,7 @@ function Header() {
                             Login
                         </Link>
 
-                        <Link href={`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/api/auth/login` : "http://localhost:8000/api/auth/login"}`}
+                        <Link href={`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/login` : "http://localhost:8000/login"}`}
                             className="py-2 px-6 rounded-md flex items-center gap-4 border border-[#7263f3] text-[#7263f3] hover:bg-[#7263f3]/10 transition-all duration-200 ease-in-out"
                         >
                             <UserPlus className="w-4 h-4" />
