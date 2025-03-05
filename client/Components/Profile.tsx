@@ -88,8 +88,7 @@ function Profile() {
 
                 <DropdownMenuItem className="cursor-pointer"
                     onClick={() => {
-                        router.push(`${process.env.NEXT_PUBLIC_CLIENT_URL ? `${process.env.NEXT_PUBLIC_CLIENT_URL}/logout` : "https://jobfindr-b3evdud4ergme6ak.canadacentral-01.azurewebsites.net/logout"}`);
-
+                        router.push(`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/logout` : "http://localhost:8000/logout"}`);
                     }}
                 >
                     <LogOut className="mr-2 h-4 w-4" />

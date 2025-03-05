@@ -8,13 +8,13 @@ import { useRouter } from "next/navigation";
 
 function page() {
 
-    const {isAuthenticated, loading} = useGlobalContext();
+    const { isAuthenticated, loading } = useGlobalContext();
     const router = useRouter();
 
 
     useEffect(() => {
         if (!loading && !isAuthenticated) {
-            router.push(`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/login` : "https://jobfindr-b3evdud4ergme6ak.canadacentral-01.azurewebsites.net/login"}`);
+            router.push(`${process.env.NEXT_PUBLIC_SERVER_URL ? `${process.env.NEXT_PUBLIC_SERVER_URL}/login` : "http://localhost:8000/login"}`);
         }
     }, [isAuthenticated, loading, router]);
 
@@ -26,9 +26,9 @@ function page() {
             <h2 className="flex-1 mx-auto text-3xl font-bold text-black">
                 Create a Job Post</h2>
 
-                <div className="flex-1 pt-8 mx-auto w-[90%] flex justify-center items-center ">
-                    <JobForm />
-                </div>
+            <div className="flex-1 pt-8 mx-auto w-[90%] flex justify-center items-center ">
+                <JobForm />
+            </div>
         </div>
     );
 }
