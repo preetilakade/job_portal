@@ -86,7 +86,7 @@ routeFiles.forEach((file) => {
 });
 
 app.get("/",async (req, res) => {
-  const CLIENT_URL = process.env.CLIENT_URL || "https://calm-water-0eb02631e.6.azurestaticapps.net";//modified
+  const CLIENT_URL = process.env.CLIENT_URL || "https://localhost:3000";//modified
   if (req.oidc.isAuthenticated()) {
 
     //check if auth0 user exist in db
